@@ -5,12 +5,14 @@
 - gem 'pagy'
 - gem 'sgcop', github: 'SonicGarden/sgcop'
 
-- group :development
+- group :development :test
   gem "haml-lint"
   gem "bullet"
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-
+  
+- group :development
+  gem "faker"
 ## gemのインストール
 - bundle install
 
