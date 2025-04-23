@@ -17,7 +17,7 @@
 - simple formのインストール
   - rails generate simple_form:install --bootstrap
 - erb -> haml変換
-  - bundle exec rails g haml:application_layout convert
+  - rails haml:erb2haml
 
 ## Userの新規作成、ログイン実装
 - Deviceの初期設定
