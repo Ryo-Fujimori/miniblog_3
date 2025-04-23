@@ -30,6 +30,7 @@
       t.text :profile
       t.string :blog_url
   - rails db:migrate
+  - プロフィールを200文字以内にする
 
 ## Userのresource作成
 - rails g controller users
