@@ -61,4 +61,7 @@
   - has_many :posts, dependant: :destroy
 ## postのresource作成
 - rails g controller posts
-
+- 人が書いた投稿を消せないようにする
+- 人の投稿には編集ボタンや消去ボタンひょうじさせないようにする
+- 自分自身をフォロー出来ないようにする
+- 
