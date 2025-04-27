@@ -41,3 +41,19 @@
 - factoryでユーザーのひな形を作る
 - UserのResourceが動くことの確認
 - edit画面でプロフィール200文字以上でエラーになる
+
+## Postモデル作成
+- rails g model Post
+- マイグレーションファイル作成
+  - create_table :posts do |t|
+      t.text :content
+    end
+    add_reference, :posts :user, index: { unique: true }
+- rails db:migrate
+- contentを140文字以内に制限
+ - validates :content, presence: :true, length: {maximum: 2}
+- user_idは必須にする
+  - validates :user_id, presence: :true
+## postのresource作成
+- rails g controller posts
+
