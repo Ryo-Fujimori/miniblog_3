@@ -56,6 +56,9 @@
  - validates :content, presence: :true, length: {maximum: 2}
 - user_idは必須にする
   - validates :user_id, presence: :true
+## Userモデル修正
+- UserはPostを複数所有する
+  - has_many :posts, dependant: :destroy
 ## postのresource作成
 - rails g controller posts
 
