@@ -1,7 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # ユーザーが作成できること
-
-
+  pending "add some examples to (or delete) #{__FILE__}"
 end
