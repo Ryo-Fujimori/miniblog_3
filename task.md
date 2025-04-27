@@ -48,7 +48,7 @@
   - create_table :posts do |t|
       t.text :content
     end
-    add_reference, :posts :user, index: { unique: true }
+    add_reference :posts, :user, index: { unique: true }
 - rails db:migrate
 - contentを140文字以内に制限
  - validates :content, presence: :true, length: {maximum: 2}
