@@ -1,14 +1,14 @@
 %h1 ユーザー詳細
 = link_to '設定', edit_user_path(@user), class: 'btn btn-primary'
-.container
+%div
   メールアドレス  
   = @user.email
-.container 
+%div 
   名前
   = @user.name
-.container
+%div
   プロフィール
   = @user.profile
-.container
+%div
   ブログURl
   = @user.blog_url
