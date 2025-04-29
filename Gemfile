@@ -21,18 +21,19 @@ gem "thruster", require: false
 gem "devise"
 gem "haml-rails"
 gem "simple_form"
-gem 'pagy'
-gem 'sgcop', github: 'SonicGarden/sgcop'
+gem "pagy"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   # gem "rubocop-rails-omakase", require: false
-
+  gem "faker"
+  
+  gem "sgcop", github: "SonicGarden/sgcop"
   gem "haml-lint"
   gem "bullet"
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
