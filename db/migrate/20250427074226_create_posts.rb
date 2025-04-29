@@ -4,6 +4,6 @@ class CreatePosts < ActiveRecord::Migration[8.0]
       t.text :content
       t.timestamps
     end
-    add_reference :posts, :user, index: { unique: true }
+    add_reference :posts, :user
   end
 end
