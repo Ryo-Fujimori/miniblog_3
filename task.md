@@ -67,3 +67,9 @@
 
 - i18nで多言語対応
 - Postのコントローラー分割
+
+## フォロー機能作成
+- relationshipモデル作成
+  - rails g model relationship
+- マイグレーションにはUserへの参照を持つ
+- relationもusersのnamespaceで管理する
