@@ -1,14 +1,14 @@
 %h1 ユーザー詳細
 = link_to '設定', edit_user_path(@user), class: 'btn btn-primary'
 %div
-  メールアドレス  
+  = I18n.t('attributes.user.email')
   = @user.email
-%div 
-  名前
+%div
+  = I18n.t('attributes.user.name')
   = @user.name
 %div
-  プロフィール
+  = I18n.t('attributes.user.profile')
   = @user.profile
 %div
-  ブログURl
+  = I18n.t('attributes.user.blog_url')
   = @user.blog_url

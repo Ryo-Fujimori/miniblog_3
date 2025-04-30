@@ -1,10 +1,10 @@
 %h1 
   Post詳細
 %h2 
-  Email
+  = I18n.t('attributes.user.email')
 = @post.user.email
 %h2 
-  Content
+  = I18n.t('attributes.post.content')
 = @post.content
 %div 
   - if @post.user == current_user
