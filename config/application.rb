@@ -12,4 +12,11 @@ module Miniblog3
 
     config.i18n.default_locale = :ja
   end
+  config.generators do |g|
+    g.helper false
+    g.test_framework :rspec,
+                     routing_specs: false,
+                     request_specs: false,
+                     view_specs: false
+  end
 end
