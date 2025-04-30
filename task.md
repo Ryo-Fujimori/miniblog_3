@@ -56,6 +56,14 @@
  - validates :content, presence: :true, length: {maximum: 2}
 - user_idは必須にする
   - validates :user_id, presence: :true
+## Userモデル修正
+- UserはPostを複数所有する
+  - has_many :posts, dependant: :destroy
 ## postのresource作成
 - rails g controller posts
+- 人が書いた投稿を消せないようにする
+- 人の投稿には編集ボタンや消去ボタンひょうじさせないようにする
+- 自分自身をフォロー出来ないようにする
 
+- i18nで多言語対応
+- Postのコントローラー分割

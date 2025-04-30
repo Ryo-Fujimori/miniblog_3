@@ -1,0 +1,9 @@
+ja:
+  attributes:
+    user:
+      name: "名前"
+      profile: "プロフィール"
+      blog_url: "ブログURL"
+      email: "メールアドレス"
+    post:
+      content: "コンテンツ"

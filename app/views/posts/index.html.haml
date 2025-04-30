@@ -1,0 +1,10 @@
+%h1 Post一覧
+%ul
+  - @posts.each do |post|
+    %li
+      %p
+        = post.user.email
+      %p
+        = post.content
+      %p
+        = link_to '詳細', post_path(post)

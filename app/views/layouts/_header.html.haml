@@ -1,0 +1,14 @@
+- if user_signed_in?
+  %div
+    ログイン中 : 
+    = current_user.email
+    = link_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }
+  %div 
+    = link_to 'Post新規作成', new_users_post_path
+- else 
+  %div 
+    = link_to 'Login', new_user_session_path
+    = link_to 'Sign Up', new_user_registration_path
+%div
+  = link_to 'Post一覧', posts_path
+  = link_to 'User一覧', users_path
