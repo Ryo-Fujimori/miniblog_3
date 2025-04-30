@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  # before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[show]
   before_action :authenticate_user!, except: %i[index show]
-  before_action :correct_user, only: %i[edit update destroy]
+  # before_action :correct_user, only: %i[edit update destroy]
   
   def index
     @posts = Post.all
@@ -10,34 +11,34 @@ class PostsController < ApplicationController
   def show
   end
 
-  def new
-    @post = Post.new
-  end
+  # def new
+  #   @post = Post.new
+  # end
 
-  def create
-    @post = current_user.posts.create(post_params)
-    if @post.save
-      redirect_to posts_path, notice: 'Post was successfully created.'
-    else
-      render :new, status: :unprocessable_entity, alert: '作成に失敗しました'
-    end
-  end
+  # def create
+  #   @post = current_user.posts.create(post_params)
+  #   if @post.save
+  #     redirect_to posts_path, notice: 'Post was successfully created.'
+  #   else
+  #     render :new, status: :unprocessable_entity, alert: '作成に失敗しました'
+  #   end
+  # end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @post.update(post_params)
+  #     redirect_to @post, notice: 'Post was successfully updated.'
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
-  end
+  # def destroy
+  #   @post.destroy
+  #   redirect_to posts_url, notice: 'Post was successfully destroyed.'
+  # end
 
   private
 
