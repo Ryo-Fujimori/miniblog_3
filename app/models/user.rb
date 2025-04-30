@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).delete
   end
+# フォローしているかどうか
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id).present?
+  end
 end
