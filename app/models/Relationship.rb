@@ -5,12 +5,12 @@ class Relationship < ApplicationRecord
   # 2回フォローできないようにする
   validates :follower_id, uniqueness: { scope: :followed_id }
   # 自分自身をフォローできないようにする
-  validate :cannot_follow_self
+  validate :cant_follow_self
 
 
   private
 
-  def cannot_follow_self
+  def cant_follow_self
     errors.add(:base, "You cannot follow yourself") if follower_id == followed_id
   end
 end
