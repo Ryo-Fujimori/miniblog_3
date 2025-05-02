@@ -21,6 +21,5 @@ class Users::RelationshipsController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    redirect_to root_path, alert: 'ユーザーが見つかりません' unless @user
   end
 end
