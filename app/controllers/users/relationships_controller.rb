@@ -3,17 +3,17 @@ class Users::RelationshipsController < ApplicationController
 
   def create
     if current_user.follow(@user)
-      redirect_to :users, notice: t('users.relationships.follow_success')
+      redirect_to users_path, notice: t('users.relationships.follow_success')
     else
-      redirect_to :users, alert: t('users.relationships.follow_failure')
+      redirect_to users_path, alert: t('users.relationships.follow_failure')
     end
   end
 
   def destroy
     if current_user.unfollow(@user)
-      redirect_to :users, notice: t('users.relationships.unfollow_success')
+      redirect_to users_path, notice: t('users.relationships.unfollow_success')
     else
-      redirect_to :users, alert: t('users.relationships.unfollow_failure')
+      redirect_to users_path, alert: t('users.relationships.unfollow_failure')
     end
   end
 
