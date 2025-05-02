@@ -1,0 +1,10 @@
+-# 未フォローならフォローボタンを表示
+-# フォロー済みならフォロー解除ボタンを表示
+-# current_userがnilなら何も表示しない
+-# current_userがuserと同じなら何も表示しない
+- if current_user && current_user != user
+  - if current_user.following?(user)
+    = link_to "フォロー解除", users_relationship_path(user), method: :delete, class: "btn btn-danger", data: { turbo_method: :delete }
+  - else
+    = link_to "フォロー", users_relationships_path(id: user.id),method: :post, class: "btn btn-primary", data: { turbo_method: :post }
+

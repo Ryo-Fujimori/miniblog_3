@@ -7,3 +7,9 @@ ja:
       email: "メールアドレス"
     post:
       content: "コンテンツ"
+  users:
+    relationships:
+      follow_success: "フォローしました"
+      follow_failure: "フォローに失敗しました"
+      unfollow_success: "フォロー解除しました"
+      unfollow_failure: "フォロー解除に失敗しました"
