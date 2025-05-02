@@ -56,4 +56,30 @@ describe 'Posts', type: :system do
     expect(page).to have_content('Post was successfully destroyed.')
     expect(page).not_to have_content('投稿の内容')
   end
+
+  it '他のユーザーの投稿を削除できない' do  
+    # 他のユーザーを作成
+    other_user = create(:user)
+    # 他のユーザーの投稿を作成
+    other_post = create(:post, user: other_user)
+
+    # 投稿詳細ページに移動
+    visit post_path(other_post)
+
+    # 削除ボタンが表示されていないことを確認
+    expect(page).not_to have_link('Delete')
+  end
+
+  it '他のユーザーの投稿を編集できない' do  
+    # 他のユーザーを作成
+    other_user = create(:user)
+    # 他のユーザーの投稿を作成
+    other_post = create(:post, user: other_user)
+
+    # 投稿詳細ページに移動
+    visit post_path(other_post)
+
+    # 編集ボタンが表示されていないことを確認
+    expect(page).not_to have_link('Edit')
+  end
 end
