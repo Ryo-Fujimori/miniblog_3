@@ -10,15 +10,14 @@ class User < ApplicationRecord
 
   validates :profile, length: { maximum: 200 }
 
-  #フォローする
   def follow(other_user)
     active_relationships << Relationship.new(followed_id: other_user.id)
   end
-  #フォローを外す
+
   def unfollow(other_user)
-    active_relationships.find_by(followed_id: other_user.id).delete
+    active_relationships.find_by(followed_id: other_user.id).destroy!
   end
-# フォローしているかどうか
+  
   def following?(other_user)
     active_relationships.find_by(followed_id: other_user.id).present?
   end
